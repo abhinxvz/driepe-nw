@@ -280,6 +280,28 @@ export async function updateAdminOrderStatus(id: string, status: string) {
   return await res.json();
 }
 
+export async function getAdminProducts(): Promise<Product[]> {
+  const res = await fetch(`${getApiUrl()}/products`, {
+    headers: adminHeaders(),
+    credentials: "include",
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || "Failed to fetch products");
+  return data.data;
+}
+
+export async function getProductById(id: string): Promise<Product> {
+  const res = await fetch(`${getApiUrl()}/products/${id}`, {
+    headers: adminHeaders(),
+    credentials: "include",
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || "Failed to fetch product");
+  return data.data;
+}
+
 export async function verifyAdminSession() {
   const res = await fetch(`${getApiUrl()}/auth/me`, {
     method: "GET",
