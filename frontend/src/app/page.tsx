@@ -131,6 +131,61 @@ export default function LandingPage() {
               )}
             </div>
           </div>
+
+          {/* JOIN US & MODEL WITH US SECTION */}
+          <div className="max-w-[1400px] px-6 md:px-12 mx-auto mt-20 pt-16 border-t border-zinc-800">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Join Us Card */}
+              <Link
+                href="/contact"
+                className="group relative bg-zinc-900 border border-zinc-800 p-8 md:p-12 hover:border-white transition-all duration-300 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <h3
+                    className="text-3xl md:text-4xl font-black tracking-widest uppercase mb-4"
+                    style={{ fontFamily: "var(--font-koulen), Impact, sans-serif" }}
+                  >
+                    JOIN US
+                  </h3>
+                  <p className="text-zinc-400 text-sm tracking-wide leading-relaxed mb-6">
+                    Become part of the DRIEPE community. Get exclusive updates, early access to drops, and connect with like-minded individuals redefining streetwear.
+                  </p>
+                  <div className="flex items-center gap-2 text-white font-bold tracking-widest uppercase text-sm">
+                    GET IN TOUCH
+                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Model With Us Card */}
+              <button
+                onClick={() => {
+                  const footer = document.querySelector('footer');
+                  const modelButton = footer?.querySelector('button[class*="text-zinc-400"]') as HTMLButtonElement;
+                  modelButton?.click();
+                }}
+                className="group relative bg-zinc-900 border border-zinc-800 p-8 md:p-12 hover:border-white transition-all duration-300 overflow-hidden text-left"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <h3
+                    className="text-3xl md:text-4xl font-black tracking-widest uppercase mb-4"
+                    style={{ fontFamily: "var(--font-koulen), Impact, sans-serif" }}
+                  >
+                    MODEL WITH US
+                  </h3>
+                  <p className="text-zinc-400 text-sm tracking-wide leading-relaxed mb-6">
+                    Represent DRIEPE and be part of something bigger. Apply now to collaborate with us and showcase your style to the world.
+                  </p>
+                  <div className="flex items-center gap-2 text-white font-bold tracking-widest uppercase text-sm">
+                    APPLY NOW
+                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
